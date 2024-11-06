@@ -17,7 +17,7 @@ create table users (
     university varchar(100) default null,
     problem_count smallint default 0,
     max_rating smallint default null,
-    rating_title varchar(30)
+    rating_title varchar(30),
     last_updated DATETIME NULL
 );
 
