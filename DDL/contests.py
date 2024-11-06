@@ -5,7 +5,7 @@ from db import execute_query
 api_url = "https://codeforces.com/api/"
 
 def get_contest_type(contest_name):
-    types = ["Div. 1", "Div. 2", "Div. 3", "Div. 4", "Educational", "CodeTON", "Global", "Kotlin", "VK Cup", "Long Rounds", "April Fools", "Team Contests", "ICPC Scoring"]
+    types = ["Div. 1 + Div. 2", "Div. 1", "Div. 2", "Div. 3", "Div. 4", "Educational", "CodeTON", "Global", "Kotlin", "VK Cup", "Long Rounds", "April Fools", "Team Contests", "ICPC Scoring"]
     for t in types:
         if t in contest_name:
             return t
