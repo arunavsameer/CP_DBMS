@@ -15,4 +15,11 @@ def close_db_connection(db, cursor):
     db.close()
 
 def execute_query(cursor, query, values=None):
-    cursor.execute(query, values)
+    if values:
+        # Check if 'values' is a list of tuples for batch inserts
+        if isinstance(values, list) and all(isinstance(v, tuple) for v in values):
+            cursor.executemany(query, values)
+        else:
+            cursor.execute(query, values)
+    else:
+        cursor.execute(query)
